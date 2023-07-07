@@ -6,8 +6,8 @@ def convertir(texto):
     return lista
 
 # Leer un archivo de texto
-def leer():
-    texto = open('ejemplos/', 'r', encoding='utf-8')
+def leer(archivo):
+    texto = open('ejemplos/{}'.format(archivo), 'r', encoding='utf-8')
     contenido = texto.read()
     texto.close()
     return contenido # Devolvemos el contenido en forma de cadena
