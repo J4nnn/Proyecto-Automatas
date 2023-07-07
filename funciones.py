@@ -18,8 +18,13 @@ def leer(archivo):
 def eliminarPuntuacion(texto):
     texto = texto.translate(str.maketrans('', '', string.punctuation)) # Eliminamos puntuación
     texto = unidecode.unidecode(texto) # Eliminamos acentos
-    texto = unidecode.unidecode(texto) # Eliminamos ? y ! que reemplazaron a ¿ y ¡ en la 1ra ejecución
+    # texto = unidecode.unidecode(texto) # Eliminamos ? y ! que reemplazaron a ¿ y ¡ en la 1ra ejecución
     # Notar que ¿ y ¡ son casos especiales del español y no se eliminan arriba
     # Nota: En donde se elimina la puntuación, lo que se hace es que se cambian: ¿->? y ¡->!, entonces eliminar ¿ y ¡ no tiene sentido. Hay dos posibles soluciones, eliminar ? y ! o correr una segunda vez la función de eliminar puntuación.
-    # texto = re.sub('[?!]', '', texto) # Eliminamos ¿ y ¡
+    # Nota de la nota: La 2da solución no funciona
+    texto = re.sub('[?!]', '', texto) # Eliminamos ¿ y ¡
+    return texto
+
+def pasarAMinusculas(texto):
+    texto = texto.lower()
     return texto
