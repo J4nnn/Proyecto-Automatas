@@ -13,3 +13,6 @@ def leer():
     return contenido # Devolvemos el contenido en forma de cadena
 
 # Eliminamos los simbolos de puntuación del texto
+def eliminarPuntuacion(texto):
+    texto = texto.translate(str.maketrans('', '', string.punctuation))
+    return texto
