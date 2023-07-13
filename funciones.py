@@ -53,7 +53,7 @@ def encontrarMaximo(lista):
 #     pass
 
 def evaluar(palabra):
-    from dfa import automata
+    from dfaProyecto import automata
     d = automata()
     if d.accepts_input(palabra) != True:
         return False
