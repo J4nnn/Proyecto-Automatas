@@ -40,18 +40,7 @@ def eliminarCadenasVacias(lista):
         lista.remove('')
     return lista
 
-# Definir tamaño de la palabra más larga
-def encontrarMaximo(lista):
-    longitud = 0;
-    for palabra in lista:
-        if len(palabra) >= longitud:
-            longitud = len(palabra)
-    return longitud
-
-# Suponemos que existe al menos una palabra de longitud n tal que n < longitud de la palabra más larga
-# def separarLista(lista):
-#     pass
-
+# Evaluar que palabras son aceptadas por el autómata
 def evaluar(palabra):
     from dfaProyecto import automata
     d = automata()
