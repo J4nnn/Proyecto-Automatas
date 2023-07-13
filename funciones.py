@@ -1,7 +1,3 @@
-import string
-import unidecode # Se necesita instalar -> 'pip install Unidecode'
-import re
-
 # Convertir de cadena de texto a lista
 def convertirALista(texto):
     lista = list(texto.split(' '))
@@ -16,6 +12,7 @@ def leerArchivo(archivo):
 
 # Eliminar los simbolos de puntuación y acentos del texto
 def eliminarPuntuacion(texto):
+    import string, re, unidecode # Se necesita instalar -> 'pip install Unidecode'
     texto = texto.translate(str.maketrans('', '', string.punctuation)) # Eliminamos puntuación
     texto = unidecode.unidecode(texto) # Eliminamos acentos
     # texto = unidecode.unidecode(texto) # Eliminamos ? y ! que reemplazaron a ¿ y ¡ en la 1ra ejecución
@@ -42,3 +39,22 @@ def eliminarCadenasVacias(lista):
     while('' in lista):
         lista.remove('')
     return lista
+
+# Definir tamaño de la palabra más larga
+def encontrarMaximo(lista):
+    longitud = 0;
+    for palabra in lista:
+        if len(palabra) >= longitud:
+            longitud = len(palabra)
+    return longitud
+
+# Suponemos que existe al menos una palabra de longitud n tal que n < longitud de la palabra más larga
+# def separarLista(lista):
+#     pass
+
+def evaluar(palabra):
+    from dfa import automata
+    d = automata()
+    if d.accepts_input(palabra) != True:
+        return False
+    return True
