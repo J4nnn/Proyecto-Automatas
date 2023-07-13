@@ -2,7 +2,7 @@
 from funciones import *
 
 # Tratamos el archivo de texto
-a = leerArchivo('ejemplo1')
+a = leerArchivo('ejemplo5')
 a = eliminarPuntuacion(a)
 a = pasarAMinusculas(a)
 a = eliminarSaltosDeLinea(a)
