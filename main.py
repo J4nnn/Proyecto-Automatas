@@ -11,9 +11,12 @@ b = eliminarCadenasVacias(b)
 # print(b)
 
 puntosSPAM = 0; # Si es mayor o igual a 7 se considerará SPAM
+
+# Vemos que palabras son aceptadas por el autómata
 for i in range(0, len(b)):
-    if evaluar(b[i]):
-        puntosSPAM += 1
+    if len(b[i]) >= 4: # Solo evaluamos palabras con longitud 4 o mayor
+        if evaluar(b[i]):
+            puntosSPAM += 1
 
 # Definimos si un correo es potencialmente SPAM
 if puntosSPAM >= 7:
